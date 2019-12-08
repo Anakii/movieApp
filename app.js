@@ -33,6 +33,9 @@ app.use((req, res, next) => {
   );
   next();
 });
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname + "/index.html"));
+});
 app.post("/api/signIn", (req, res, next) => {
   bcrypt
     .hash(req.body.password, 10)
