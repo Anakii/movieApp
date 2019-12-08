@@ -33,6 +33,7 @@ app.use((req, res, next) => {
   );
   next();
 });
+app.use(express.static(__dirname + "/dist/mdb-angular-free"));
 app.get("/*", function(req, res) {
   res.sendFile(path.join(__dirname + "/dist/mdb-angular-free/index.html"));
 });
