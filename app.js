@@ -33,8 +33,8 @@ app.use((req, res, next) => {
   );
   next();
 });
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname + "/index.html"));
+app.get("/*", function(req, res) {
+  res.sendFile(path.join(__dirname + "/dist/mdb-angular-free/index.html"));
 });
 app.post("/api/signIn", (req, res, next) => {
   bcrypt
